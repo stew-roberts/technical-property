@@ -20,6 +20,16 @@ export default {
       description: 'The main site url. Used to create canonical url',
     },
     {
+      name: 'telephone',
+      type: 'string',
+      title: 'Contact Number',
+    },
+    {
+      name: 'email',
+      type: 'string',
+      title: 'Contact Email',
+    },
+    {
       name: 'frontpage',
       type: 'reference',
       description: 'Choose page to be the frontpage',

@@ -1,19 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SimpleBlockContent from '../SimpleBlockContent'
-import styles from './TextSection.module.css'
 
 function TextSection(props) {
   const {heading, label, text} = props
 
   return (
-    <div className={styles.root}>
-      <section className={styles.article}>
-        <div className={styles.label}>{label}</div>
-        <h2 className={styles.heading}>{heading}</h2>
+    
+      <section className="sm:w-full md:w-3/5 mx-auto">
+        {/* <div className="">{label}</div> */}
+        <h2 className="my-12 font-bold text-3xl">{heading}</h2>
         {text && <SimpleBlockContent blocks={text} />}
       </section>
-    </div>
+    
   )
 }
 
