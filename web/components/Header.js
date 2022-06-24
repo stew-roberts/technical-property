@@ -62,38 +62,32 @@ class Header extends Component {
       return <SVG src={logo.asset.url} className="" />
     }
 
-    return <img src={logo.asset.url} alt={logo.title} className="h-32" />
+    return <img src={logo.asset.url} alt={logo.title} className="h-28 p-2" />
   }
 
   render() {
-    const {title = 'Missing title', navItems, router, logo, telephone, email} = this.props
-    const {showNav} = this.state
-    console.log(this.props);
+    const {title = 'Missing title', navItems, router, logo} = this.props
 
     return (
-      <header className="border-t-4 border-black">
-        <div className="sm: w-full md:w-3/5 mx-auto flex justify-between px-4 py-4">
-          <h1 className="flex flex-col">
-            <Link href={'/'}>
-              <a title={title}>{this.renderLogo(logo)}</a>
-            </Link>
-          </h1>
-          <div className="flex items-center text-sm text-gray-500">
-            <span className="mr-5">{telephone}</span>
-            <span className="mr-5">{email}</span>
-          </div>
-        </div>
-        <nav className="bg-black">
-          <div className="sm: w-full md:w-3/5 mx-auto">
-            <ul className="inline-flex text-gray-400 text-xs">
+      <header>
+        <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+           <h1 className="flex flex-col">
+             <Link href={'/'}>
+               <a title={title}>{this.renderLogo(logo)}</a>
+             </Link>
+           </h1>
+           
+           <nav className>
+            <div className="">
+            <ul className="uppercase text-sm flex flex-row gap-20">
               {navItems &&
                 navItems.map((item) => {
                   const {slug, title, _id} = item
                   const isActive = slugParamToPath(router.query.slug) === slug.current
                   return (
-                    <li key={_id} className="mx-3 my-3 mr-6 pr-10">
+                    <li key={_id} className="">
                       <Link href={getPathFromSlug(slug.current)}>
-                        <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive} className="uppercase font-bold hover:text-white">
+                        <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive} className="tracking-widest">
                           {title}
                         </a>
                       </Link>
@@ -106,7 +100,10 @@ class Header extends Component {
             </button>
             </div>
           </nav>
+
+        </div>
       </header>
+
     )
   }
 }

@@ -14,7 +14,7 @@ function Layout(props) {
     return <div>Missing config</div>
   }
 
-  const {title, mainNavigation, footerNavigation, footerText, logo, url, telephone, email} = config
+  const {title, mainNavigation, footerNavigation, footerText, footerTextCol1, footerTextCol2, footerTextCol3, footerTextCol4, logo, url, telephone, email} = config
   const logoUrl = logo && logo.asset && logo.asset.url
   
 
@@ -26,7 +26,13 @@ function Layout(props) {
       <div>
         <Header title={title} navItems={mainNavigation} logo={logo} telephone={telephone} email={email} />
         <div className="content">{children}</div>
-        <Footer navItems={footerNavigation} text={footerText} />
+        <Footer 
+          navItems={footerNavigation} 
+          text={footerText}
+          col1={footerTextCol1}
+          col2={footerTextCol2}
+          col3={footerTextCol3}
+          col4={footerTextCol4} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>
     </>
@@ -40,6 +46,12 @@ Layout.propTypes = {
     mainNavigation: PropTypes.arrayOf(PropTypes.object),
     footerNavigation: PropTypes.arrayOf(PropTypes.object),
     footerText: PropTypes.arrayOf(PropTypes.object),
+    footerTextCol1: PropTypes.string,
+    footerTextCol2: PropTypes.string,
+    footerTextCol3: PropTypes.string,
+    footerTextCol4: PropTypes.string,
+    telephone: PropTypes.string,
+    email: PropTypes.string,
     logo: PropTypes.shape({
       asset: PropTypes.shape({
         url: PropTypes.string,

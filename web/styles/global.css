@@ -5,5 +5,23 @@
 @layer base {
     p {
       @apply my-4;
+      @apply tracking-wide;
+      @apply font-light;
+    }
+
+    footer p {
+        @apply my-1;
+        @apply tracking-wide;
+        @apply font-light;
+    }
+
+    footer p strong {
+        @apply block;
+        @apply tracking-widest;
+        @apply mt-4;
+        @apply mb-4;
+        @apply uppercase;
+        @apply text-sm;
+        @apply text-white;
     }
   }

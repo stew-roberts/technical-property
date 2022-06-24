@@ -20,8 +20,12 @@ function Hero(props) {
 
   return (
     <div>
-      <div className="h-96" style={style}>
-        <div className="">
+      <div className="sm:h-screen lg:h-[50rem] flex justify-center items-center" style={style}>
+        <div className="container flex justify-center w-1/2 text-white">
+          <div>
+            <h1 className="text-m tracking-widest uppercase block">{heading}</h1>
+            <p className="tracking-wide text-4xl block">{tagline && <SimpleBlockContent blocks={tagline} />}</p>
+          </div>
           {ctas && (
             <div className="">
               {ctas.map((cta) => (
@@ -30,13 +34,6 @@ function Hero(props) {
             </div>
           )}
         </div>
-      </div>
-      <div className="bg-black py-12 text-white">
-        <div className="sm:w-fuil md:w-3/5 mx-auto px-4">
-          <h1 className="text-4xl tracking-wide">{heading}</h1>
-          <div className="tracking-wide">{tagline && <SimpleBlockContent blocks={tagline} />}</div>
-        </div>
-      
       </div>
     </div>
   )

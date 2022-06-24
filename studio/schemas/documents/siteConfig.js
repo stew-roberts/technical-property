@@ -101,5 +101,25 @@ export default {
       type: 'simplePortableText',
       fieldset: 'footer',
     },
+    {
+      name: 'footerTextCol1',
+      type: 'simplePortableText',
+      fieldset: 'footer',
+    },
+    {
+      name: 'footerTextCol2',
+      type: 'simplePortableText',
+      fieldset: 'footer',
+    },
+    {
+      name: 'footerTextCol3',
+      type: 'simplePortableText',
+      fieldset: 'footer',
+    },
+    {
+      name: 'footerTextCol4',
+      type: 'simplePortableText',
+      fieldset: 'footer',
+    },
   ],
 };

@@ -26,6 +26,10 @@ export default {
         { type: 'imageSection' },
         { type: 'mailchimp' },
         { type: 'textSection' },
+        { type: 'ctaSection' },
+        { type: 'textImageLeft' },
+        { type: 'textImageRight' },
+        { type: 'posts' },
       ],
     },
     {

@@ -7,7 +7,7 @@ import Cta from '../Cta'
 
 const builder = imageUrlBuilder(client)
 
-function ImageSection(props) {
+function TextImageRight(props) {
   const {heading, label, text, image, cta} = props
 
   if (!image) {
@@ -43,7 +43,7 @@ function ImageSection(props) {
   )
 }
 
-ImageSection.propTypes = {
+TextImageRight.propTypes = {
   heading: PropTypes.string,
   label: PropTypes.string,
   text: PropTypes.array,
@@ -57,4 +57,4 @@ ImageSection.propTypes = {
   cta: PropTypes.object,
 }
 
-export default ImageSection
+export default TextImageRight

@@ -14,20 +14,20 @@ function cta(props) {
         }}
         as={`/${route.slug.current}`}
       >
-        <a className={styles.button}>{title}</a>
+        <a className="">{title}</a>
       </Link>
     )
   }
 
   if (link) {
     return (
-      <a className={styles.button} href={link}>
+      <a className="" href={link}>
         {title}
       </a>
     )
   }
 
-  return <a className={styles.button}>{title}</a>
+  return <a className="">{title}</a>
 }
 
 cta.propTypes = {

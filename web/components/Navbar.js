@@ -4,6 +4,7 @@ import {getPathFromSlug, slugParamToPath} from '../utils/urls'
 import Link from 'next/link'
 
 export const Navbar = (navItems) => {
+    const {router} = navItems
     return (
         <nav>
             <ul className="inline-flex">

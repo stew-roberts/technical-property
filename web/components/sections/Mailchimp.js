@@ -4,7 +4,7 @@ import MailchimpForm from 'react-mailchimp-form'
 
 export default function Mailchimp(props) {
   const {heading, subtitle, actionUrl} = props
-
+  const styles = ''
   return (
     <section className="">
       <div className="">

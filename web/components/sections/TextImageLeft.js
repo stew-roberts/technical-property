@@ -7,7 +7,7 @@ import Cta from '../Cta'
 
 const builder = imageUrlBuilder(client)
 
-function ImageSection(props) {
+function TextImageLeft(props) {
   const {heading, label, text, image, cta} = props
 
   if (!image) {
@@ -17,6 +17,13 @@ function ImageSection(props) {
   return (
     <div className="container flex justify-center mx-auto">
       <figure className="flex flex-row items-center mt-24">
+      <div className="w-1/2">
+            <img
+            src={builder.image(image).auto('format').width(2000).url()}
+            className=""
+            alt={heading}
+            />
+        </div>
         <figcaption className="w-1/2 p-24">
           <div className="flex">
             <div className="text-gray-500">
@@ -31,19 +38,12 @@ function ImageSection(props) {
             </div>
           </div>
         </figcaption>
-        <div className="w-1/2">
-        <img
-          src={builder.image(image).auto('format').width(2000).url()}
-          className=""
-          alt={heading}
-        />
-        </div>
       </figure>
     </div>
   )
 }
 
-ImageSection.propTypes = {
+TextImageLeft.propTypes = {
   heading: PropTypes.string,
   label: PropTypes.string,
   text: PropTypes.array,
@@ -57,4 +57,4 @@ ImageSection.propTypes = {
   cta: PropTypes.object,
 }
 
-export default ImageSection
+export default TextImageLeft

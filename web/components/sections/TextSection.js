@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SimpleBlockContent from '../SimpleBlockContent'
 
 function TextSection(props) {
-  const {heading, label, text} = props
+  const {heading, text} = props
 
   return (
     
@@ -18,7 +18,6 @@ function TextSection(props) {
 
 TextSection.propTypes = {
   heading: PropTypes.string,
-  label: PropTypes.string,
   text: PropTypes.arrayOf(PropTypes.object),
 }
 
