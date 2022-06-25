@@ -5,14 +5,14 @@ const Posts = (props) => {
   return (
     <div>
       <div 
-        className="bg-[url('https://cdn.sanity.io/images/n0hhn4t2/production/120ead83582d8bde9bebd89b51844ec0a453e8b2-1950x705.jpg?w=2000&auto=format')] sm:h-screen lg:h-[50rem] bg-cover">
+        className="bg-[url('https://cdn.sanity.io/images/n0hhn4t2/production/120ead83582d8bde9bebd89b51844ec0a453e8b2-1950x705.jpg?w=2000&auto=format')] sm:h-screen lg:h-[40rem] bg-cover bg-center">
       </div>
       <div className="container mx-auto">
         <div className="container mx-auto mt-36 flex flex-wrap items-center justify-between">
         {props.posts.map((post) => (
-          <div key={post._id} className="sm:w-full lg:w-[30rem] h-[35rem] overflow-hidden bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <div key={post._id} className="sm:w-full lg:w-[30rem] h-[35rem] overflow-hidden bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
               <div className="w-[30rem] h-[17rem] overflow-hidden">
-                <img className="rounded-t-lg" src={post.image && post.image.asset && post.image.asset.url} alt="{post.title}" />
+                <img className="" src={post.image && post.image.asset && post.image.asset.url} alt="{post.title}" />
               </div>
               <div className="p-5 min-h-[15rem]">
                 <div>

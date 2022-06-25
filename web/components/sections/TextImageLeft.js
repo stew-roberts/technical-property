@@ -20,7 +20,7 @@ function TextImageLeft(props) {
       <div className="w-1/2">
             <img
             src={builder.image(image).auto('format').width(2000).url()}
-            className=""
+            className="max-h-[30rem] object-cover"
             alt={heading}
             />
         </div>

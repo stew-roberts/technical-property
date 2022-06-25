@@ -18,9 +18,9 @@ const Post = (props) => {
 	return (
 	<Layout config={config}>
 		<div>
-			<div className="sm:h-screen lg:h-[50rem] bg-cover" style={style}></div>
+			<div className="sm:h-screen lg:h-[40rem] bg-cover bg-center" style={style}></div>
 			<div className="container mx-auto">
-				<div className="container mx-auto mt-36 flex flex-wrap items-center justify-between">
+				<div className="container mx-auto mt-24 flex flex-wrap items-center justify-between">
 					<NewsItem title={title} subtitle={subtitle} body={body} categories={categories} postedDate={createdAt}  />
           <Author title={author.name} gravatar={author.gravatar} />
 				</div>

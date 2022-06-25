@@ -3,14 +3,16 @@ import PropTypes from 'prop-types'
 import SimpleBlockContent from '../SimpleBlockContent'
 
 function TextSection(props) {
-  const {heading, text} = props
+  const {heading, label, text} = props
 
   return (
     
-      <section className="sm:w-full md:w-3/5 mx-auto">
-        {/* <div className="">{label}</div> */}
-        <h2 className="my-12 font-bold text-3xl">{heading}</h2>
+      <section className="container mx-auto mt-16">
+        <div className="flex flex-col">
+        <h2 className="block uppercase tracking-widest text-gray-500 mb-1 text-xs">{heading}</h2>
+        <div className="text-3xl font-medium text-black my-2">{label}</div>
         {text && <SimpleBlockContent blocks={text} />}
+        </div>
       </section>
     
   )
