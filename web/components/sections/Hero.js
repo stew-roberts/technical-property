@@ -20,8 +20,8 @@ function Hero(props) {
 
   return (
     <div>
-      <div className="sm:h-screen lg:h-[40rem] flex justify-center items-end bg-center" style={style}>
-        <div className="container flex justify-center w-1/2 text-white">
+      <div className="sm:h-screen lg:h-[40rem] flex lg:justify-center lg:items-end bg-center" style={style}>
+        <div className="container flex lg:justify-center lg:w-1/2 text-white">
           <div>
             <h1 className="text-m tracking-widest uppercase block">{heading}</h1>
             <p className="tracking-wide text-4xl block">{tagline && <SimpleBlockContent blocks={tagline} />}</p>

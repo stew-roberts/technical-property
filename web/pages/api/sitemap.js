@@ -6,7 +6,8 @@ export default async function handler(req, res) {
   const {allRoutesSlugs, baseUrl} = await client.fetch(groq`{
     // Get the slug of all routes that should be in the sitemap
     "allRoutesSlugs": *[
-      _type == "route" &&
+      _type == "route" ||
+      _type == "post" &&
       !(_id in path("drafts.**")) &&
       includeInSitemap != false &&
       disallowRobots != true
@@ -16,8 +17,7 @@ export default async function handler(req, res) {
     "baseUrl": *[_id == "global-config"][0].url,
   }`)
 
-  const sitemap = `
-  <?xml version="1.0" encoding="UTF-8"?>
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${allRoutesSlugs
       .map(

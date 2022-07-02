@@ -5,6 +5,8 @@ import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import HamburgerIcon from './icons/Hamburger'
 import {getPathFromSlug, slugParamToPath} from '../utils/urls'
+import {FaBars, FaTimes} from 'react-icons/fa'
+import Navbar from './Navbar'
 
 class Header extends Component {
   state = {showNav: false}
@@ -67,40 +69,55 @@ class Header extends Component {
 
   render() {
     const {title = 'Missing title', navItems, router, logo} = this.props
-
     return (
       <header>
-        <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center lg:items-center lg:justify-between px-4 py-2">
            <h1 className="flex flex-col">
              <Link href={'/'}>
                <a title={title}>{this.renderLogo(logo)}</a>
              </Link>
            </h1>
-           
-           <nav className>
-            <div className="">
-            <ul className="uppercase text-sm flex flex-row gap-20">
-              {navItems &&
-                navItems.map((item) => {
-                  const {slug, title, _id} = item
-                  const isActive = slugParamToPath(router.query.slug) === slug.current
-                  return (
-                    <li key={_id} className="">
-                      <Link href={getPathFromSlug(slug.current)}>
-                        <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive} className="tracking-widest">
-                          {title}
-                        </a>
-                      </Link>
-                    </li>
-                  )
-                })}
-            </ul>
-            <button className="md:hidden" onClick={this.handleMenuToggle}>
-              <HamburgerIcon className="" />
-            </button>
-            </div>
-          </nav>
+           <nav>
+                {/* Main Menu - medium and above */}
+                <ul className="hidden lg:flex uppercase text-sm flex-row gap-20">
+                {navItems &&
+                    navItems.map((item) => {
+                    const {slug, title, _id} = item
+                    const isActive = slugParamToPath(router.query.slug) === slug.current
+                    return (
+                        <li key={_id} className="">
+                        <Link href={getPathFromSlug(slug.current)}>
+                            <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive} className="tracking-widest">
+                            {title}
+                            </a>
+                        </Link>
+                        </li>
+                    )
+                    })}
+                </ul>
 
+                <button className="lg:hidden z-10 " onClick={this.handleMenuToggle}>
+                    { this.state.showNav ? (<FaTimes className='h-10 w-10' />) : (<FaBars className='h-10 w-10' />) }
+                </button>
+
+                {/* Mobile Menu */}
+                <ul className={!this.state.showNav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-black text-white flex flex-col justify-center items-center'}>
+                {navItems &&
+                    navItems.map((item) => {
+                    const {slug, title, _id} = item
+                    const isActive = slugParamToPath(router.query.slug) === slug.current
+                    return (
+                        <li key={_id} className="">
+                        <Link href={getPathFromSlug(slug.current)}>
+                            <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive} className="tracking-widest">
+                            {title}
+                            </a>
+                        </Link>
+                        </li>
+                    )
+                    })}
+                </ul>
+            </nav>
         </div>
       </header>
 

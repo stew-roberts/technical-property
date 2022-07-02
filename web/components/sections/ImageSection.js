@@ -16,13 +16,13 @@ function ImageSection(props) {
 
   return (
     <div className="container flex justify-center mx-auto">
-      <figure className="flex flex-row items-center mt-24">
-        <figcaption className="w-1/2 p-24">
+      <figure className="flex flex-col lg:flex-row items-center lg:mt-24">
+        <figcaption className="w-full p-4 lg:w-1/2 lg:p-24">
           <div className="flex">
             <div className="text-gray-500">
               <h2 className="uppercase tracking-widest text-gray-500 mb-1 text-xs">{heading}</h2>
-              <div className="text-5xl font-medium text-black my-2">{label}</div>
-              <div className="border-l border-gray-500 pl-5">
+              <div className="lg:text-5xl font-medium text-black lg:my-2">{label}</div>
+              <div className="lg:border-l lg:border-gray-500 lg:pl-5">
                 {text && <SimpleBlockContent blocks={text} />}
               </div>
               <div className=" text-black uppercase text-xs mt-8">
@@ -31,10 +31,10 @@ function ImageSection(props) {
             </div>
           </div>
         </figcaption>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
         <img
           src={builder.image(image).auto('format').width(2000).url()}
-          className=""
+          className="lg:max-h-[30rem] lg:object-cover"
           alt={heading}
         />
         </div>
