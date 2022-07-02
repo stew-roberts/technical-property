@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
-import HamburgerIcon from './icons/Hamburger'
 import {getPathFromSlug, slugParamToPath} from '../utils/urls'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import Navbar from './Navbar'
 
 class Header extends Component {
   state = {showNav: false}
